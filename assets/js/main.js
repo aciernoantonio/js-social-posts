@@ -58,7 +58,7 @@ posts.forEach((element, index) => {
                 </div>
 
                 <div>
-                    <span> Piace a <strong>${element.likes}</strong> persone<span>
+                    <span> Piace a <strong id="liked ${element.id}">${element.likes}</strong> persone<span>
                 </div>
 
             </div>
@@ -69,6 +69,21 @@ posts.forEach((element, index) => {
 
     document.querySelector(".container").insertAdjacentHTML(`beforeend`, postElement);
 
+    let liked_post = [];
+
+    let increment = document.getElementById(`like ${element.id}`)
+    
+    increment.addEventListener("click", function() {
+        
+        /* console.log(`mi hai cliccato al post ${element.id}`); */
+        increment.classList.toggle("blue");
+        
+        let addLike = element.likes + 1;
+        let likeDisplay = document.getElementById(`liked ${element.id}`).innerHTML = addLike;
+    })
+
 });
+
+//quando clicchiamo sul tasto mi piace cambiamo il colore del bottone e incrementiamo il counter
 
 
