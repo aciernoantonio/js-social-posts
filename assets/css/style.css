@@ -56,3 +56,14 @@ body{
 .margin{
     padding:20px;
 }
+
+.likes{
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.add_like{
+    background-color: transparent;
+    border: none;
+}

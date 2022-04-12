@@ -17,14 +17,12 @@ let posts = [
         date: "07-03-2022",
         text_post: "Whatever is good for your soul, don't do that",
         post_photo: "https://picsum.photos/450/300",
-        likes: 39
+        likes: 52
     }
 ]
 
 //stampa contenuto degli oggetti nel dom come post
 posts.forEach((element, index) => {
-    const id = element.id;
-    console.log(id);
 
     let postElement = `
     
@@ -52,6 +50,18 @@ posts.forEach((element, index) => {
 
                 </div>
             <div>
+
+            <div class="likes">
+            
+                <div>
+                    <button class="add_like" id="like ${element.id}"> <i class="fa-solid fa-xl fa-thumbs-up"></i> Mi piace</button>
+                </div>
+
+                <div>
+                    <span> Piace a <strong>${element.likes}</strong> persone<span>
+                </div>
+
+            </div>
 
         </div>
     </div>
