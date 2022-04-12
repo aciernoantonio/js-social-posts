@@ -3,20 +3,62 @@ let posts = [
     {
         id: 1, 
         user_name: "Bronto Paolo",
-        user_photo: "http://assets.stickpng.com/images/585e4bf3cb11b227491c339a.png",
+        user_photo: "./assets/img/Sample_User_icon.png",
         date: "07-05-2022",
         text_post: "Whatever is good for your soul, do that",
-        post_photo: "https://i.picsum.photos/id/232/300/300.jpg?hmac=CRMHCkif6NslMZy3Qw-PaoymQMf9L_t92kK3xa_Zr7g",
+        post_photo: "https://picsum.photos/450/300",
         likes: 39
     },
 
     {
         id: 2, 
         user_name: "Cannon Brando",
-        user_photo: "http://assets.stickpng.com/images/585e4bf3cb11b227491c339a.png",
+        user_photo: "./assets/img/Sample_User_icon.png",
         date: "07-03-2022",
         text_post: "Whatever is good for your soul, don't do that",
-        post_photo: "https://i.picsum.photos/id/294/300/300.jpg?hmac=F7rT8nOUlyZecLe_lkllejN6bqMCuLQDt9iVfKSeyQg",
+        post_photo: "https://picsum.photos/450/300",
         likes: 39
     }
 ]
+
+//stampa contenuto degli oggetti nel dom come post
+posts.forEach((element, index) => {
+    const id = element.id;
+    console.log(id);
+
+    let postElement = `
+    
+    <div class="post mt">
+
+        <div class="margin">
+        
+            <div class="user">
+                <img class="user_img"
+                    src="${element.user_photo}">
+
+                    <div>
+                        <h3>${element.user_name}</h3>
+                        <span>${element.date}</span>
+                    </div>
+    
+            </div>
+
+            <div class="content">
+                <p>${element.text_post}</p>
+
+                <div class="post_photo">
+
+                    <img src="${element.post_photo}">
+
+                </div>
+            <div>
+
+        </div>
+    </div>
+    `
+
+    document.querySelector(".container").insertAdjacentHTML(`beforeend`, postElement);
+
+});
+
+
