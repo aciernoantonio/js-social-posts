@@ -80,6 +80,9 @@ posts.forEach((element, index) => {
         
         let addLike = element.likes + 1;
         let likeDisplay = document.getElementById(`liked ${element.id}`).innerHTML = addLike;
+
+        
+        liked_post.push(element.id);
     })
 
 });
